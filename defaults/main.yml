@@ -1,6 +1,7 @@
 ---
 # defaults file for docker_env
 
+# default variables
 state: started
 command: sleep 1d
 privileged: yes
@@ -12,11 +13,12 @@ capabilities:
   - SYS_ADMIN
 restart_policy: unless-stopped
 
+# pull images/create containers
 prepare_ubuntu: false
 prepare_centos: false
 prepare_rockylinux: false
 
-# delete
+# delete containers
 prune_rockylinux: false
 prune_centos: false
 prune_ubuntu: false
