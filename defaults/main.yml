@@ -1,7 +1,7 @@
 ---
 # defaults file for docker_env
 
-# default variables
+# default container variables
 state: started
 command: sleep 1d
 privileged: yes
