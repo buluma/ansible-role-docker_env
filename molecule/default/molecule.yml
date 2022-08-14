@@ -60,8 +60,5 @@ scenario:
     - create
     - prepare
     - converge
-    - idempotence
-    - side_effect
     - verify
-    - cleanup
     - destroy
