@@ -7,6 +7,7 @@ services:
 variables:
   DOCKER_HOST: "tcp://docker:2375"
   PY_COLORS: 1
+  environment: production
 
 molecule:
   stage: build

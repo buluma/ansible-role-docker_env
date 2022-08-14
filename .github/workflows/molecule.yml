@@ -23,6 +23,9 @@ concurrency:
   group: ${{ github.ref }}-${{ github.workflow }}
   cancel-in-progress: true
 
+env:
+  environment: production
+
 jobs:
   lint:
     runs-on: ubuntu-20.04
