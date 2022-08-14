@@ -28,7 +28,7 @@ env:
 
 jobs:
   lint:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: checkout
         uses: actions/checkout@v3
@@ -41,7 +41,7 @@ jobs:
   test:
     needs:
       - lint
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     strategy:
       fail-fast: false
       matrix:
@@ -62,6 +62,53 @@ jobs:
             tag: "focal"
           - image: "docker-ubuntu-systemd"
             tag: "bionic"
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+        with:
+          path: "${{ github.repository }}"
+      - name: disable apparmor for mysql
+        run: sudo ln -s /etc/apparmor.d/usr.sbin.mysqld /etc/apparmor.d/disable/
+      - name: parse apparmor for mysql
+        run: sudo apparmor_parser -R /etc/apparmor.d/usr.sbin.mysqld
+      - name: molecule
+        uses: buluma/molecule-action@v5.0.1
+        with:
+          image: ${{ matrix.config.image }}
+          tag: ${{ matrix.config.tag }}
+  macOS_test:
+    runs-on: macos-12
+    strategy:
+      fail-fast: true
+      matrix:
+        config:
+          - image: "fedora-systemd"
+            tag: "34"
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+        with:
+          path: "${{ github.repository }}"
+      - name: disable apparmor for mysql
+        run: sudo ln -s /etc/apparmor.d/usr.sbin.mysqld /etc/apparmor.d/disable/
+      - name: parse apparmor for mysql
+        run: sudo apparmor_parser -R /etc/apparmor.d/usr.sbin.mysqld
+      - name: molecule
+        uses: buluma/molecule-action@v5.0.1
+        with:
+          image: ${{ matrix.config.image }}
+          tag: ${{ matrix.config.tag }}
+
+  macOS_test_latest:
+    needs:
+      - macOS_test
+    runs-on: macos-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        config:
+          - image: "fedora-systemd"
+            tag: "34"
     steps:
       - name: checkout
         uses: actions/checkout@v3
