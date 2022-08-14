@@ -78,10 +78,10 @@
       with_items: "{{ rockylinux_images }}"
       when: prune_rockylinux | bool
 
-# prune everything
-- name: prune block
+# docker system prune
+- name: prune docker system
   block:
-    - name: prune everything
+    - name: docker system prune
       community.docker.docker_prune:
         containers: yes
         images: yes

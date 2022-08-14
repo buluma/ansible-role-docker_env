@@ -9,9 +9,30 @@ galaxy_info:
   min_ansible_version: "2.1"
 
   platforms:
-    - name: Fedora
+    - name: Alpine
       versions:
         - all
+    - name: Debian
+      versions:
+        - all
+    - name: Fedora
+      versions:
+        - "34"
+        - "35"
+    - name: Ubuntu
+      versions:
+        - all
+    - name: MacOSX
+      versions:
+        - "10.15"
+        - "10.14"
+        - "10.13"
+    - name: macOS
+      versions:
+        - Big-Sur
+        - High-Sierra
+        - Monterey
+        - Sierra
 
   galaxy_tags:
     - docker
