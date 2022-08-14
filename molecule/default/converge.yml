@@ -13,6 +13,7 @@
     prune_ubuntu: false
     prune_centos: false
     prune_rockylinux: false
+    container_default_behavior: 'compatibility'
 
   roles:
     - role: ansible-role-docker_env
