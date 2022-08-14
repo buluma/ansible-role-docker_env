@@ -22,17 +22,9 @@ galaxy_info:
     - name: Ubuntu
       versions:
         - all
-    - name: MacOSX
+    - name: opensuse
       versions:
-        - "10.15"
-        - "10.14"
-        - "10.13"
-    - name: macOS
-      versions:
-        - Big-Sur
-        - High-Sierra
-        - Monterey
-        - Sierra
+        - all
 
   galaxy_tags:
     - docker
