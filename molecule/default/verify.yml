@@ -1,0 +1,18 @@
+---
+# This task checks final containers created
+
+- name: Verify
+  hosts: localhost
+  gather_facts: false
+  tasks:
+  - name: verify containers created and running
+    command: |
+      docker ps --filter "status=running"
+    register: containers
+
+  # - name: show running containers
+  #   debug: var=containers
+
+  - debug:
+      msg: 'All containers are running'
+    when: containers.stdout is defined and containers.stdout_lines != ""

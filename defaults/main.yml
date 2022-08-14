@@ -1,0 +1,25 @@
+---
+# defaults file for docker_env
+
+state: started
+command: sleep 1d
+privileged: yes
+interactive: yes
+tty: yes
+volumes:
+  - /sys/fs/cgroup:/sys/fs/cgroup:ro
+capabilities:
+  - SYS_ADMIN
+restart_policy: unless-stopped
+
+prepare_ubuntu: false
+prepare_centos: false
+prepare_rockylinux: false
+
+# delete
+prune_rockylinux: false
+prune_centos: false
+prune_ubuntu: false
+
+# prune everything
+prune_everything: false
