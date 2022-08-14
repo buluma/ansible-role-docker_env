@@ -16,6 +16,7 @@
           - /sys/fs/cgroup:/sys/fs/cgroup:ro
         capabilities: "{{ capabilities }}"
         restart_policy: "{{ restart_policy }}"
+        container_default_behavior: "{{ container_default_behavior }}"
       with_items: "{{ ubuntu_images }}"
       when: prepare_ubuntu | bool
 
@@ -32,6 +33,7 @@
           - /sys/fs/cgroup:/sys/fs/cgroup:ro
         capabilities: "{{ capabilities }}"
         restart_policy: "{{ restart_policy }}"
+        container_default_behavior: "{{ container_default_behavior }}"
       with_items: "{{ centos_images }}"
       when: prepare_centos | bool
 
@@ -48,6 +50,7 @@
           - /sys/fs/cgroup:/sys/fs/cgroup:ro
         capabilities: "{{ capabilities }}"
         restart_policy: "{{ restart_policy }}"
+        container_default_behavior: "{{ container_default_behavior }}"
       with_items: "{{ rockylinux_images }}"
       when: prepare_rockylinux | bool
 

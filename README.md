@@ -61,6 +61,7 @@ volumes:
 capabilities:
   - SYS_ADMIN
 restart_policy: unless-stopped
+container_default_behavior: no_defaults
 
 # pull images/create containers
 prepare_ubuntu: false
