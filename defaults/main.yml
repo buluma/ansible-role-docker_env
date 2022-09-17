@@ -18,11 +18,13 @@ container_default_behavior: no_defaults
 prepare_ubuntu: false
 prepare_centos: false
 prepare_rockylinux: false
+prepare_fedora: false
 
 # delete containers
 prune_rockylinux: false
 prune_centos: false
 prune_ubuntu: false
+prune_fedora: false
 
 # prune everything, i.e. docker system prune
 prune_everything: false

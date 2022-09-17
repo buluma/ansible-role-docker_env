@@ -27,3 +27,7 @@ rockylinux_images:
     image: buluma/oraclelinux:8
   - name: oraclelinux-9
     image: buluma/oraclelinux:9
+
+fedora_images:
+  - name: fedora-latest
+    image: buluma/fedora:latest

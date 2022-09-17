@@ -22,9 +22,11 @@ This example is taken from `molecule/default/converge.yml` and is tested on each
     prepare_ubuntu: true
     prepare_centos: true
     prepare_rockylinux: true
+    prepare_fedora: true
     prune_ubuntu: false
     prune_centos: false
     prune_rockylinux: false
+    prune_fedora: false
     container_default_behavior: 'compatibility'
 
   roles:
