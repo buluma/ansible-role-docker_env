@@ -5,7 +5,7 @@
   hosts: localhost
   gather_facts: false
   tasks:
-  - name: verify containers created and running
+  - name: Verify containers created and running
     command: |
       docker ps --filter "status=running"
     register: containers
