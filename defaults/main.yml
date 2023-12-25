@@ -8,7 +8,7 @@ privileged: yes
 interactive: yes
 tty: yes
 volumes:
-  - /sys/fs/cgroup:/sys/fs/cgroup:ro
+  - /sys/fs/cgroup:/sys/fs/cgroup:rw
 capabilities:
   - SYS_ADMIN
 restart_policy: unless-stopped

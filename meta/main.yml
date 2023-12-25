@@ -6,7 +6,7 @@ galaxy_info:
   company: ShadowNet
   license: Apache-2.0
 
-  min_ansible_version: "2.1"
+  min_ansible_version: "2.12"
 
   platforms:
     - name: Alpine
@@ -17,8 +17,8 @@ galaxy_info:
         - all
     - name: Fedora
       versions:
-        - "34"
-        - "35"
+        - "38"
+        - "39"
     - name: Ubuntu
       versions:
         - all
