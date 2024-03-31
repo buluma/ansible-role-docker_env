@@ -1,12 +1,15 @@
 ---
 - name: Converge
   hosts: localhost
+  become: true
+  gather_facts: true
   serial:
     - 1
     - 2
     - 25%
     - 50%
   vars:
+    docker_requirements: docker
     prepare_ubuntu: true
     prepare_centos: true
     prepare_rockylinux: true
@@ -16,7 +19,6 @@
     prune_rockylinux: false
     prune_fedora: false
     container_default_behavior: 'compatibility'
-    docker_requirements: docker
 
   roles:
     - role: ansible-role-docker_env

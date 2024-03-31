@@ -14,12 +14,15 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
 ---
 - name: Converge
   hosts: localhost
+  become: true
+  gather_facts: true
   serial:
     - 1
     - 2
     - 25%
     - 50%
   vars:
+    docker_requirements: docker
     prepare_ubuntu: true
     prepare_centos: true
     prepare_rockylinux: true
@@ -40,8 +43,8 @@ The machine needs to be prepared. In CI this is done using [`molecule/default/pr
 ---
 - name: Prepare
   hosts: all
-  become: yes
-  gather_facts: no
+  become: true
+  gather_facts: false
 
   roles:
     - role: buluma.bootstrap
@@ -60,9 +63,9 @@ The default values for the variables are set in [`defaults/main.yml`](https://gi
 # default container variables
 state: started
 command: sleep 1d
-privileged: yes
-interactive: yes
-tty: yes
+privileged: true
+interactive: true
+tty: true
 volumes:
   - /sys/fs/cgroup:/sys/fs/cgroup:rw
 capabilities:
@@ -124,7 +127,7 @@ This role has been tested on these [container images](https://hub.docker.com/u/b
 |[Alpine](https://hub.docker.com/r/buluma/alpine)|all|
 |[Debian](https://hub.docker.com/r/buluma/debian)|all|
 |[Fedora](https://hub.docker.com/r/buluma/fedora)|38, 39|
-|[Ubuntu](https://hub.docker.com/r/buluma/ubuntu)|all|
+|[Ubuntu](https://hub.docker.com/r/buluma/ubuntu)|focal, bionic, jammy, lunar|
 |[opensuse](https://hub.docker.com/r/buluma/opensuse)|all|
 
 The minimum version of Ansible required is 2.12, tests have been done to:
