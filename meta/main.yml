@@ -24,7 +24,10 @@ galaxy_info:
         - all
     - name: opensuse
       versions:
-        - all
+        - focal
+        - bionic
+        - jammy
+        - lunar
 
   galaxy_tags:
     - docker

@@ -16,6 +16,7 @@
     prune_rockylinux: false
     prune_fedora: false
     container_default_behavior: 'compatibility'
+    docker_requirements: docker
 
   roles:
     - role: ansible-role-docker_env

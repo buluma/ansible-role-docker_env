@@ -5,14 +5,14 @@
   hosts: localhost
   gather_facts: false
   tasks:
-  - name: Verify containers created and running
-    command: |
-      docker ps --filter "status=running"
-    register: containers
+    - name: Verify containers created and running
+      command: |
+        docker ps --filter "status=running"
+      register: containers
 
-  # - name: show running containers
-  #   debug: var=containers
+    # - name: show running containers
+    #   debug: var=containers
 
-  - debug:
-      msg: 'All containers are running'
-    when: containers.stdout is defined and containers.stdout_lines != ""
+    - debug:
+        msg: 'All containers are running'
+      when: containers.stdout is defined and containers.stdout_lines != ""
