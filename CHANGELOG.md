@@ -7,17 +7,16 @@
 **Merged pull requests:**
 
 - Bump dependabot/fetch-metadata from 1 to 2 [\#19](https://github.com/buluma/ansible-role-docker_env/pull/19) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump buluma/dependabot-auto-merge-action from 2.1.1 to 2.1.2 [\#18](https://github.com/buluma/ansible-role-docker_env/pull/18) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump release-drafter/release-drafter from 5 to 6 [\#17](https://github.com/buluma/ansible-role-docker_env/pull/17) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump buluma/dependabot-auto-merge-action from 2.1.1 to 2.1.2 [\#16](https://github.com/buluma/ansible-role-docker_env/pull/16) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump release-drafter/release-drafter from 5 to 6 [\#15](https://github.com/buluma/ansible-role-docker_env/pull/15) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump release-drafter/release-drafter from 5 to 6 [\#14](https://github.com/buluma/ansible-role-docker_env/pull/14) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump buluma/molecule-action from 6.0.0 to 6.0.1 [\#13](https://github.com/buluma/ansible-role-docker_env/pull/13) ([dependabot[bot]](https://github.com/apps/dependabot))
 
 ## [0.4.0](https://github.com/buluma/ansible-role-docker_env/tree/0.4.0) (2024-01-20)
 
 [Full Changelog](https://github.com/buluma/ansible-role-docker_env/compare/0.3.0...0.4.0)
-
-**Merged pull requests:**
-
-- Bump buluma/molecule-action from 6.0.0 to 6.0.1 [\#13](https://github.com/buluma/ansible-role-docker_env/pull/13) ([dependabot[bot]](https://github.com/apps/dependabot))
 
 ## [0.3.0](https://github.com/buluma/ansible-role-docker_env/tree/0.3.0) (2024-01-10)
 
