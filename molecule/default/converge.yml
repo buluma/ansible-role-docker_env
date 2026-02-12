@@ -21,4 +21,4 @@
     container_default_behavior: 'compatibility'
 
   roles:
-    - role: ansible-role-docker_env
+    - role: buluma.docker_env
