@@ -5,4 +5,4 @@
 repository:
   description: Prepare Docker Environment for local testing.
   homepage: https://buluma.github.io/
-  topics: docker, customization, prepare, images, ansible, molecule, tox, playbook
+  topics: docker, customization, prepare, images, ansible, molecule, playbook
