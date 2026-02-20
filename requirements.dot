@@ -1,0 +1,15 @@
+digraph PhiloDilemma {
+  label = "Michael Buluma" ;
+  overlap=false
+  {
+    "docker_env" [fillcolor=yellow style=filled penwidth=3]
+    "buluma.bootstrap" [fillcolor=green style=filled]
+    "buluma.epel" [fillcolor=green style=filled]
+    "buluma.python_pip" [fillcolor=green style=filled]
+    "buluma.docker" [fillcolor=green style=filled]
+  }
+  "docker_env" -> "buluma.bootstrap"
+  "docker_env" -> "buluma.epel"
+  "docker_env" -> "buluma.python_pip"
+  "docker_env" -> "buluma.docker"
+}
