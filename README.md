@@ -12,42 +12,42 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
 
 ```yaml
 ---
-- name: Converge
-  hosts: localhost
-  become: true
-  gather_facts: true
-  serial:
-    - 1
-    - 2
-    - 25%
-    - 50%
-  vars:
-    docker_requirements: docker
-    prepare_ubuntu: true
-    prepare_centos: true
-    prepare_rockylinux: true
-    prepare_fedora: true
-    prune_ubuntu: false
-    prune_centos: false
-    prune_rockylinux: false
-    prune_fedora: false
-    container_default_behavior: 'compatibility'
+  - name: Converge
+    hosts: localhost
+    become: true
+    gather_facts: true
+    serial:
+      - 1
+      - 2
+      - 25%
+      - 50%
+    vars:
+      docker_requirements: docker
+      prepare_ubuntu: true
+      prepare_centos: true
+      prepare_rockylinux: true
+      prepare_fedora: true
+      prune_ubuntu: false
+      prune_centos: false
+      prune_rockylinux: false
+      prune_fedora: false
+      container_default_behavior: 'compatibility'
 
-  roles:
-    - role: buluma.docker_env
+    roles:
+      - role: buluma.docker_env
 ```
 
 The machine needs to be prepared. In CI this is done using [`molecule/default/prepare.yml`](https://github.com/buluma/ansible-role-docker_env/blob/master/molecule/default/prepare.yml):
 
 ```yaml
 ---
-- name: Prepare
-  hosts: all
-  become: true
-  gather_facts: false
+  - name: Prepare
+    hosts: all
+    become: true
+    gather_facts: false
 
-  roles:
-    - role: buluma.bootstrap
+    roles:
+      - role: buluma.bootstrap
 ```
 
 Also see a [full explanation and example](https://buluma.github.io/how-to-use-these-roles.html) on how to use these roles.
