@@ -67,9 +67,9 @@ privileged: true
 interactive: true
 tty: true
 volumes:
-- /sys/fs/cgroup:/sys/fs/cgroup:rw
+  - /sys/fs/cgroup:/sys/fs/cgroup:rw
 capabilities:
-- SYS_ADMIN
+  - SYS_ADMIN
 restart_policy: unless-stopped
 container_default_behavior: no_defaults
 
