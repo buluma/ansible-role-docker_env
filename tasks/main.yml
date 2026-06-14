@@ -7,15 +7,15 @@
       community.docker.docker_container:
         name: "{{ item.name }}"
         image: "{{ item.image }}"
-        state: "{{ state }}"
-        command: "{{ command }}"
-        privileged: "{{ privileged }}"
-        interactive: "{{ interactive }}"
-        tty: "{{ tty }}"
+        state: "{{ docker_env_state }}"
+        command: "{{ docker_env_command }}"
+        privileged: "{{ docker_env_privileged }}"
+        interactive: "{{ docker_env_interactive }}"
+        tty: "{{ docker_env_tty }}"
         volumes:
           - /sys/fs/cgroup:/sys/fs/cgroup:ro
-        capabilities: "{{ capabilities }}"
-        restart_policy: "{{ restart_policy }}"
+        capabilities: "{{ docker_env_capabilities }}"
+        restart_policy: "{{ docker_env_restart_policy }}"
         container_default_behavior: "{{ container_default_behavior }}"
       with_items: "{{ ubuntu_images }}"
       when: prepare_ubuntu | bool
@@ -24,15 +24,15 @@
       community.docker.docker_container:
         name: "{{ item.name }}"
         image: "{{ item.image }}"
-        state: "{{ state }}"
-        command: "{{ command }}"
-        privileged: "{{ privileged }}"
-        interactive: "{{ interactive }}"
-        tty: "{{ tty }}"
+        state: "{{ docker_env_state }}"
+        command: "{{ docker_env_command }}"
+        privileged: "{{ docker_env_privileged }}"
+        interactive: "{{ docker_env_interactive }}"
+        tty: "{{ docker_env_tty }}"
         volumes:
           - /sys/fs/cgroup:/sys/fs/cgroup:ro
-        capabilities: "{{ capabilities }}"
-        restart_policy: "{{ restart_policy }}"
+        capabilities: "{{ docker_env_capabilities }}"
+        restart_policy: "{{ docker_env_restart_policy }}"
         container_default_behavior: "{{ container_default_behavior }}"
       with_items: "{{ centos_images }}"
       when: prepare_centos | bool
@@ -41,15 +41,15 @@
       community.docker.docker_container:
         name: "{{ item.name }}"
         image: "{{ item.image }}"
-        state: "{{ state }}"
-        command: "{{ command }}"
-        privileged: "{{ privileged }}"
-        interactive: "{{ interactive }}"
-        tty: "{{ tty }}"
+        state: "{{ docker_env_state }}"
+        command: "{{ docker_env_command }}"
+        privileged: "{{ docker_env_privileged }}"
+        interactive: "{{ docker_env_interactive }}"
+        tty: "{{ docker_env_tty }}"
         volumes:
           - /sys/fs/cgroup:/sys/fs/cgroup:ro
-        capabilities: "{{ capabilities }}"
-        restart_policy: "{{ restart_policy }}"
+        capabilities: "{{ docker_env_capabilities }}"
+        restart_policy: "{{ docker_env_restart_policy }}"
         container_default_behavior: "{{ container_default_behavior }}"
       with_items: "{{ rockylinux_images }}"
       when: prepare_rockylinux | bool
@@ -58,15 +58,15 @@
       community.docker.docker_container:
         name: "{{ item.name }}"
         image: "{{ item.image }}"
-        state: "{{ state }}"
-        command: "{{ command }}"
-        privileged: "{{ privileged }}"
-        interactive: "{{ interactive }}"
-        tty: "{{ tty }}"
+        state: "{{ docker_env_state }}"
+        command: "{{ docker_env_command }}"
+        privileged: "{{ docker_env_privileged }}"
+        interactive: "{{ docker_env_interactive }}"
+        tty: "{{ docker_env_tty }}"
         volumes:
           - /sys/fs/cgroup:/sys/fs/cgroup:ro
-        capabilities: "{{ capabilities }}"
-        restart_policy: "{{ restart_policy }}"
+        capabilities: "{{ docker_env_capabilities }}"
+        restart_policy: "{{ docker_env_restart_policy }}"
         container_default_behavior: "{{ container_default_behavior }}"
       with_items: "{{ fedora_images }}"
       when: prepare_fedora | bool
