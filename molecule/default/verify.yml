@@ -7,6 +7,7 @@
   tasks:
     - name: Verify containers created and running
       command: |
+      changed_when: false
         docker ps --filter "status=running"
       register: containers
 
