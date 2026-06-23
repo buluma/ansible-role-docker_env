@@ -7,8 +7,6 @@ docker_env_command: sleep 1d
 docker_env_privileged: true
 docker_env_interactive: true
 docker_env_tty: true
-docker_env_volumes:
-  - /sys/fs/cgroup:/sys/fs/cgroup:rw
 docker_env_capabilities:
   - SYS_ADMIN
 docker_env_restart_policy: unless-stopped
