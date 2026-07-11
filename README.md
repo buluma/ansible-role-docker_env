@@ -46,6 +46,13 @@ The machine needs to be prepared. In CI this is done using [`molecule/default/pr
   become: true
   gather_facts: false
 
+  pre_tasks:
+    - name: Install sudo if missing
+      ansible.builtin.raw: "{{ ansible_pkg_mgr | default('dnf') }} install -y sudo"
+      become: false
+      changed_when: false
+      failed_when: false
+
   roles:
     - role: buluma.bootstrap
 ```
@@ -61,16 +68,14 @@ The default values for the variables are set in [`defaults/main.yml`](https://gi
 # defaults file for docker_env
 
 # default container variables
-state: started
-command: sleep 1d
-privileged: true
-interactive: true
-tty: true
-volumes:
-  - /sys/fs/cgroup:/sys/fs/cgroup:rw
-capabilities:
+docker_env_state: started
+docker_env_command: sleep 1d
+docker_env_privileged: true
+docker_env_interactive: true
+docker_env_tty: true
+docker_env_capabilities:
   - SYS_ADMIN
-restart_policy: unless-stopped
+docker_env_restart_policy: unless-stopped
 container_default_behavior: no_defaults
 
 # pull images/create containers
@@ -114,14 +119,14 @@ Here is an overview of related roles:
 
 ## [Compatibility](#compatibility)
 
-This role has been tested on these [container images](https://hub.docker.com/u/robertdebock):
+This role has been tested on these [container images](https://hub.docker.com/u/buluma):
 
 |container|tags|
 |---------|----|
-|[Alpine](https://hub.docker.com/r/robertdebock/alpine)|all|
-|[Debian](https://hub.docker.com/r/robertdebock/debian)|all|
-|[Fedora](https://hub.docker.com/r/robertdebock/fedora)|all|
-|[Ubuntu](https://hub.docker.com/r/robertdebock/ubuntu)|all|
+|[EL](https://hub.docker.com/r/buluma/docker-molecule-images)|all|
+|[Debian](https://hub.docker.com/r/buluma/docker-molecule-images)|all|
+|[Fedora](https://hub.docker.com/r/buluma/docker-molecule-images)|all|
+|[Ubuntu](https://hub.docker.com/r/buluma/docker-molecule-images)|all|
 
 The minimum version of Ansible required is 2.12, tests have been done on:
 
@@ -139,6 +144,3 @@ If you find issues, please register them on [GitHub](https://github.com/buluma/a
 
 [buluma](https://buluma.github.io/)
 
-### Get Help
-- Report issues: https://github.com/buluma/ansible-role-docker_env/issues/new
-- See docs: https://docs.ansible.com/collection/gallery/ansible-role-docker_env
