@@ -6,14 +6,10 @@
   gather_facts: false
   tasks:
     - name: Verify containers created and running
-      command: |
+      ansible.builtin.command: docker ps --filter "status=running"
       changed_when: false
-        docker ps --filter "status=running"
       register: containers
 
-      # - name: show running containers
-      #   debug: var=containers
-
-    - debug:
+    - ansible.builtin.debug:
         msg: "All containers are running"
-      when: containers.stdout is defined and containers.stdout_lines != ""
+      when: containers.stdout_lines | length > 0
